@@ -60,7 +60,7 @@ namespace TestProject
         [Fact]
         public void Child_Pays_Fine_From_Cash_Fund()
         {
-            decimal payment = 7M; //Only owes £6.00 at this point so account will be £1.00 in credit
+            decimal payment = 7M; //Only owes Â£6.00 at this point so account will be Â£1.00 in credit
             decimal expectedBalance = greta.OutstandingFines - payment;
             greta.PayFine(payment);
             Assert.Equal(expectedBalance, greta.OutstandingFines); // negative if member is in credit
@@ -72,7 +72,7 @@ namespace TestProject
             decimal fine = 17M;
             decimal expectedBalance = Member.ChildOutstandingFineLimit;
             //Note: FineLimit is a static readonly property set to a default value of 15.00
-            greta.NewFine(fine); //child fine 's are capped so only £15 needs to be paid
+            greta.NewFine(fine); //child fine 's are capped so only Â£15 needs to be paid
             Assert.Equal(expectedBalance, greta.OutstandingFines); // negative if member is in credit
         }
 
